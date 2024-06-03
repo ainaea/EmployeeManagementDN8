@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<nlog xmlns="http://www.nlog-porject.org/schemas/NLog.xsd"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- the targets to write to -->
+	<target>
+		<!-- write logs to file -->
+		<target name="allfile" xsi:type="File" fileName=c:\DemoLogs\nlog-all-${shortdate}.log/>
+	</target>
+
+	<!-- rules to map the logger name to target -->
+	<rules>
+		<!--All logs, including from Microsoft-->
+		<logger name="*" minlevel="Trce" writeTo="allfile" />
+	</rules>
+</nlog>
